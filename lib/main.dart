@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vending_machine_status/screens/splash_screen.dart';
 
-
-void main(){
-  runApp(Machine_Status_App())
+void main() {
+  runApp(Machine_Status_App());
 }
+
 class Machine_Status_App extends StatefulWidget {
   const Machine_Status_App({super.key});
 
