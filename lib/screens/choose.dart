@@ -19,10 +19,6 @@ class Choose extends StatefulWidget {
 
 class _ChooseState extends State<Choose> {
   @override
-  void initState() {
-    super.initState();
-    print("Hello");
-  }
 
   Widget build(BuildContext context) {
     return Scaffold(
