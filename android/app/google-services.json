@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "237495890951",
+    "project_id": "machine-status-4713e",
+    "storage_bucket": "machine-status-4713e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237495890951:android:ab20e157da63fd3f43e6a2",
+        "android_client_info": {
+          "package_name": "com.example.vending_machine_status"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAprjwLccENdSTev9U9hF8h6pXkSk38fb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
