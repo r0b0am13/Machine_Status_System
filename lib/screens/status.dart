@@ -60,7 +60,7 @@ class _StatusState extends State<Status> {
                               children: <Widget>[
                                 // Add an image widget to display an image
                                 Image.asset(
-                                  'assets/snickers.jpg',
+                                  'assets/Images/snickers.jpg',
                                   height: 140,
                                   width: 120,
                                   fit: BoxFit.cover,
