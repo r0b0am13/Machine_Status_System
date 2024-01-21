@@ -22,18 +22,18 @@ class _ChooseState extends State<Choose> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Vending Machine')),
         body: SafeArea(
           child: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+        CircleAvatar(radius: 75, backgroundImage: AssetImage('assets/vendilog.jpg'),),
                   Text(
                     "Select the Vending Machine",
                     style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w300,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -41,10 +41,10 @@ class _ChooseState extends State<Choose> {
                     value: dropdown,
                     icon: const Icon(Icons.arrow_downward),
                     elevation: 16,
-                    style: const TextStyle(color: Colors.deepPurple),
+                    style: const TextStyle(color: Color.fromARGB(255, 255, 38, 0)),
                     underline: Container(
                       height: 2,
-                      color: Colors.deepPurpleAccent,
+                      color: Color.fromARGB(255, 228, 214, 12),
                     ),
                     onChanged: (String? value) {
                       // This is called when the user selects an item.
@@ -55,7 +55,7 @@ class _ChooseState extends State<Choose> {
                     items: locs.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value),
+                        child: Text(value, style: TextStyle(fontSize: 20),),
                       );
                     }).toList(),
                   ),
@@ -67,7 +67,7 @@ class _ChooseState extends State<Choose> {
                           arguments: dropdown,
                         );
                       },
-                      child: Text("Check Status"))
+                      child: Text("Check Status", style: TextStyle(color: Colors.green, fontSize: 17),))
                 ]),
           ),
         ));
