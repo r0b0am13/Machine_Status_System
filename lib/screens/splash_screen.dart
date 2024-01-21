@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart'; 
 
 
 class Splash_Screen extends StatefulWidget {
@@ -23,8 +24,14 @@ class _Splash_ScreenState extends State<Splash_Screen> {
 }
 
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("data", textAlign: TextAlign.center,),
+    return Scaffold(
+      body: Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Lottie.asset("assets/lottie1.json", height: 500, width: 500))
+        ],
+      ),)
     );
   }
 }
