@@ -16,7 +16,7 @@ db = firestore.client()
     Catalogue.append([name,price,])
     print(Catalogue)
 '''
-Catalogue=[['Snickers', 40], ['Munch', 20], ['Kitkat', 30], ['Mars', 40], ['Silk', 20], ['Twix', 63], ['Galaxy', 20], ['Gems', 10], ['Lays Blue', 20], ['Lays Green', 20], ['Lays Orange', 20], ['Kurkure Red', 20], ['Bingo Chips', 20], ['Pop Rings', 20], ['Mad Angles', 20], ['Hide n Seek', 30], ['Bourbon', 25], ['Good Day', 10], ['Dark Fantasy', 40], ['Jim Jam', 20], ['KrackJack', 20], ['Manaco', 20], ['Marie Gold', 20], ['Coke', 40], ['Sprite', 20], ['Limca', 20], ['Maaza', 20], ['Thumbs Up', 40], ['Pepsi', 40], ['Mirinda', 40]]
+Catalogue=[['Snickers', 40, 'snickers.jpg'], ['Munch', 20, 'munch.png'], ['Kitkat', 30, 'kitkat.png'], ['Mars', 40,'mars.png'], ['Silk', 20, 'silk.png'], ['Twix', 63, 'twix.png'], ['Galaxy', 20, 'galaxy.png'], ['Gems', 10, 'gems.png'], ['Lays Blue', 20, 'lays_blue.png'], ['Lays Green', 20, 'lays_green.png'], ['Lays Orange', 20, 'lays_orange.png'], ['Kurkure', 20, 'kurkure.png'], ['Bingo Chips', 20, 'bingo.png'], ['Pop Rings', 20, 'pop_rings.png'], ['Mad Angles', 20, 'mad_angles.png'], ['Hide n Seek', 30, 'hidenseek.png'], ['Bourbon', 25, 'bourbon.png'], ['Good Day', 10, 'goodday.png'], ['Dark Fantasy', 40, 'dark_fantasy.png'], ['Jim Jam', 20, 'jimjam.png'], ['KrackJack', 20, 'krack_jack.png'], ['Monaco', 20, 'monaco.png'], ['Marie Gold', 20, 'marie_gold.png'], ['Coke', 40, 'coke.png'], ['Sprite', 20, 'sprite.png'], ['Limca', 20, 'limca.png'], ['Maaza', 20, 'maaza.png'], ['Thumbs Up', 40, 'thumbs_up.png'], ['Pepsi', 40, 'pepsi.png'], ['Mirinda', 40, 'mirinda.png']]
 Status=[True,False,True,True,True,True,True,True,True,True,False,True,True,True,False,True,True,True,True,False]
         
 #exit = False
@@ -31,4 +31,4 @@ for i in range(1,6,1):
       slot="Slot0"+str(j)
     else:
       slot="Slot"+str(j)
-    db.collection('Vending_Machines').document(location).collection('items').document(slot).set({'name':Catalogue[j-1][0],'qty':random.randint(0,10),'price':Catalogue[j-1][1],'status':Status[j-1]})
+    db.collection('Vending_Machines').document(location).collection('items').document(slot).set({'name':Catalogue[j-1][0],'qty':random.randint(0,10),'price':Catalogue[j-1][1],'status':Status[j-1], 'url':Catalogue[j-1][2]})
