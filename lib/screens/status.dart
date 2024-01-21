@@ -16,11 +16,10 @@ class _StatusState extends State<Status> {
     return Scaffold(
         appBar: AppBar(
           leading: BackButton(
-            color: Colors.white,
+            color: Colors.black,
           ),
           title: Text('Vending Machine Status',
-              style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.grey[900],
+              style: TextStyle(color: Colors.black)),
           centerTitle: true,
         ),
         body: StreamBuilder(
@@ -59,13 +58,27 @@ class _StatusState extends State<Status> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 // Add an image widget to display an image
-                                Image.asset(
-                                  ('assets/Images/' +
-                                      docs[index]["url"].toString()),
-                                  height: 140,
-                                  width: 120,
-                                  fit: BoxFit.cover,
-                                ),
+                                docs[index]["qty"] != 0
+                                    ? (Image.asset(
+                                        ('assets/Images/' +
+                                            docs[index]["url"].toString()),
+                                        height: 140,
+                                        width: 120,
+                                        fit: BoxFit.cover,
+                                      ))
+                                    : (ColorFiltered(
+                                        colorFilter: ColorFilter.mode(
+                                          Colors.grey,
+                                          BlendMode.saturation,
+                                        ),
+                                        child: Image.asset(
+                                          ('assets/Images/' +
+                                              docs[index]["url"].toString()),
+                                          height: 140,
+                                          width: 120,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )),
                                 // Add some spacing between the image and the text
                                 Container(width: 40),
                                 // Add an expanded widget to take up the remaining horizontal space
@@ -115,10 +128,20 @@ class _StatusState extends State<Status> {
                                       ),
                                       Container(height: 5),
                                       // Add a text widget to display some text
-                                      Text('Status : ' +
+                                      Text(
+                                          'Status : ' +
                                               (docs[index]["status"]
                                                   ? "Working"
-                                                  : "Not Working")
+                                                  : "Not Working"),
+                                          style: TextStyle(
+                                            color: (docs[index]["status"]
+                                                ? (docs[index]["qty"] != 0
+                                                    ? (Colors.green)
+                                                    : Colors.black)
+                                                : (docs[index]["qty"] != 0
+                                                    ? (Colors.red)
+                                                    : Colors.black)),
+                                          )
                                           // MyStringsSample.card_text,
                                           // maxLines: 2,
                                           // style: MyTextSample.subhead(context)!.copyWith(
