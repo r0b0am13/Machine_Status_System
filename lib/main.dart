@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vending_machine_status/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'screens/choose.dart';
+import 'screens/status.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +11,13 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MaterialApp(
-    home: Splash_Screen(),
     debugShowCheckedModeBanner: false,
+    initialRoute: '/',
+      routes: {
+        '/': (context) => Splash_Screen(),
+        '/choose': (context) => Choose(),
+        '/status': (context) => Status(),
+      }
   ));
 }
+
